@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Emma Wailes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --white: #FAFAF8;
+    --grey-light: #F0EFEB;
+    --grey-mid: #C8C7C2;
+    --grey-text: #5C5C58;
+    --accent: #9B1F6E;
+    --accent-light: #F5E8F1;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    background: var(--white);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, padding 0.3s;
+  }
+  nav.scrolled { border-color: var(--grey-mid); padding: 18px 60px; }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-links a.active { color: var(--accent); }
+
+  /* ── MAIN ── */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 120px 60px 80px;
+    max-width: 1160px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: start;
+    width: 100%;
+  }
+
+  /* ── LEFT ── */
+  .contact-left {}
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5.5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    margin-bottom: 32px;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+
+  .contact-desc {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--grey-text);
+    max-width: 440px;
+    margin-bottom: 52px;
+  }
+
+  /* ── CONTACT LINKS ── */
+  .contact-links { display: flex; flex-direction: column; }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--grey-mid);
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+    color: var(--black);
+  }
+  .contact-link:first-child { border-top: 1px solid var(--grey-mid); }
+  .contact-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .contact-link:first-child:hover { border-top-color: var(--accent); }
+
+  .contact-link-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    margin-bottom: 4px;
+    display: block;
+    transition: color 0.2s;
+  }
+  .contact-link:hover .contact-link-label { color: var(--accent); }
+
+  .contact-link-value {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .contact-link-arrow {
+    font-size: 1rem;
+    color: var(--grey-mid);
+    transition: transform 0.25s, color 0.2s;
+    flex-shrink: 0;
+    margin-left: 24px;
+  }
+  .contact-link:hover .contact-link-arrow {
+    transform: translateX(5px);
+    color: var(--accent);
+  }
+
+  /* ── RIGHT ── */
+  .contact-right {
+    padding-top: 8px;
+  }
+
+  /* ── CV CARD ── */
+  .cv-card {
+    border: 1px solid var(--grey-mid);
+    padding: 48px 44px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cv-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .cv-card-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .cv-card h2 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .cv-card p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--grey-text);
+    margin-bottom: 36px;
+  }
+
+  .btn-download {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 18px 28px;
+    transition: opacity 0.2s;
+    width: 100%;
+  }
+  .btn-download:hover { opacity: 0.88; }
+
+  .btn-download-label {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .btn-download-primary {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .btn-download-secondary {
+    font-size: 0.74rem;
+    opacity: 0.7;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-download-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    opacity: 0.9;
+  }
+
+  /* ── AVAILABILITY STRIP ── */
+  .availability {
+    background: var(--grey-light);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .availability-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+  .availability-text {
+    font-size: 0.82rem;
+    color: var(--grey-text);
+    line-height: 1.5;
+  }
+  .availability-text strong { color: var(--black); font-weight: 500; }
+
+  /* ── META DETAILS ── */
+  .meta-details {
+    margin-top: 28px;
+    border-top: 1px solid var(--grey-mid);
+  }
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--grey-light);
+    font-size: 0.85rem;
+  }
+  .meta-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+  }
+  .meta-value { color: var(--black); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--grey-mid);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--grey-text);
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--black); }
+  .footer-logo span { color: var(--accent); }
+  footer a {
+    color: var(--grey-text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover { color: var(--accent); }
+
+  /* ── ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  main { animation: fadeUp 0.5s ease forwards; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 22px 32px; }
+    nav.scrolled { padding: 15px 32px; }
+    main { padding: 100px 32px 60px; }
+    footer { padding: 24px 32px; }
+    .contact-layout { grid-template-columns: 1fr; gap: 60px; }
+    .contact-desc { max-width: none; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: 20px 24px; }
+    main { padding: 100px 24px 60px; }
+    footer { padding: 24px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    .nav-links { gap: 20px; }
+    h1 { font-size: 2.6rem; }
+    .cv-card { padding: 36px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a class="nav-logo" href="index.html">Emma<span>.</span>Wailes</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="contact-layout">
+
+    <!-- LEFT: HEADING + LINKS -->
+    <div class="contact-left">
+      <p class="eyebrow">Get in touch</p>
+
+      <h1>Let's talk about what you're trying to <em>change.</em></h1>
+
+      <p class="contact-desc">
+        I'm open to senior design leadership roles, advisory engagements, and consulting work — particularly in government, health, justice, and education. If you're working on a complex, consequential service and need someone who can lead design at the strategic level, I'd like to hear from you.
+      </p>
+
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:emma.wailes@icloud.com">
+          <div>
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">emma.wailes@icloud.com</span>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/emmawailes" target="_blank" rel="noopener">
+          <div>
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">linkedin.com/in/emmawailes</span>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: CV + DETAILS -->
+    <div class="contact-right">
+
+      <div class="cv-card">
+        <p class="cv-card-eyebrow">Curriculum Vitae</p>
+        <h2>20+ years in service design leadership</h2>
+        <p>Full CV covering senior roles, national transformation programmes, design practice leadership, awards, and technical skills — available to download as a PDF.</p>
+
+        <a class="btn-download" href="Emma_Wailes2026_CV_Service_Designer.pdf" download>
+          <div class="btn-download-label">
+            <span class="btn-download-primary">Download CV</span>
+            <span class="btn-download-secondary">PDF · Emma Wailes · 2026</span>
+          </div>
+          <span class="btn-download-icon">↓</span>
+        </a>
+      </div>
+
+      <div class="availability">
+        <span class="availability-dot"></span>
+        <p class="availability-text">
+          <strong>Available from Q3 2025</strong> · SC Cleared · Based in London, working nationally
+        </p>
+      </div>
+
+      <div class="meta-details">
+        <div class="meta-row">
+          <span class="meta-label">Current role</span>
+          <span class="meta-value">Head of Design · Hippo Digital</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Location</span>
+          <span class="meta-value">London (hybrid / national)</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Clearance</span>
+          <span class="meta-value">SC Cleared</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Sectors</span>
+          <span class="meta-value">Government · Health · Justice · Education</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-logo">Emma<span>.</span>Wailes</span>
+  <span>Head of Design · Hippo Digital · London</span>
+  <a href="index.html">View work →</a>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+
+</body>
+</html>
