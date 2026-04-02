@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,196 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
   <div class="top-accent-bar"></div>
 
   <nav id="main-nav">
-    <a class="nav-logo" href="index.html">Emma<span>.</span>Wailes</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Work</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/images/logo.jpeg" alt="Emma Wailes logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#work">Case studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main>
-    <section class="placeholder">
-      <h1>Emma Wailes</h1>
-      <p>Service Design Leader building a cleaner portfolio homepage.</p>
-    </section>
+
+    <section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+<div class="hero-top">
+  <img src="assets/images/headshot.jpeg" alt="Portrait of Emma Wailes" class="hero-headshot">
+
+  <p class="hero-role">
+    Principal Service Design Leader | Leading transformation across complex public&nbsp;services
+  </p>
+</div>
+
+<h1 class="hero-title">
+  Designing complex public services<br>
+  that improve <em>outcomes</em> at<br>
+  national&nbsp;scale
+</h1>
+
+      <p class="hero-desc">
+        20+ years shaping service strategy, operating models and end-to-end ecosystems across government — from DfE and MoJ to NHS and national infrastructure.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work">View case studies</a>
+        <a href="assets/Emma-Wailes-CV.pdf" download class="cv-button">Download CV ↓</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>20+</strong><span>Years in design</span></div>
+        <div class="hero-stat"><strong>59</strong><span>Designers led</span></div>
+        <div class="hero-stat"><strong>SC Cleared</strong></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- <section class="hero">
+  <div class="container hero-inner">
+
+    <p class="hero-eyebrow">
+      Head of Design · Hippo Digital · SC Cleared
+    </p>
+
+    <h1 class="hero-title">
+      Designing complex public services that improve <em>outcomes</em> at national scale
+    </h1>
+
+    <p class="hero-desc">
+      20+ years shaping service strategy, operating models and end-to-end ecosystems across government.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#work">View case studies</a>
+      <a href="#">Download CV</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <strong>20+</strong>
+        <span>Years in service design</span>
+      </div>
+      <div>
+        <strong>59</strong>
+        <span>Designers led</span>
+      </div>
+      <div>
+        <strong>SC</strong>
+        <span>Cleared</span>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+    <!---------About Section--------->
+
+    <!---------Work Section--------->
+
+    <section class="case-studies" id="work">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-label">Selected work</p>
+      <h2 class="section-title"><em>Case studies </em></h2>
+    </div>
+
+    <div class="case-study-list">
+
+      <article class="case-card">
+        <img src="assets/work/thumbnails/Desktop - 1.png" alt="Eligibility Checking Engine">
+        <div class="case-card-content">
+          <p class="case-card-org">Department for Education</p>
+          <h3 class="case-card-title">Eligibility Checking Engine</h3>
+          <p class="case-card-summary">
+            Transforming national eligibility checking to improve access to free school meals and reduce manual administration across schools and local authorities.
+          </p>
+
+          <div class="case-card-meta">
+            <span>National scale</span>
+            <span>Policy-driven transformation</span>
+            <span>Service design leadership</span>
+          </div>
+
+          <a href="case-study-ece.html" class="case-card-link">View Eligibility case study</a>
+        </div>
+      </article>
+
+      <article class="case-card">
+                <img src="assets/work/thumbnails/Desktop - 3.png" alt="Dart Charge">
+
+        <div class="case-card-content">
+          <p class="case-card-org">National Highways</p>
+          <h3 class="case-card-title">Dart Charge</h3>
+          <p class="case-card-summary">
+            Improving a high-volume public-facing payment service by clarifying journeys, reducing friction and strengthening the experience across a complex operational system.
+          </p>
+
+          <div class="case-card-meta">
+            <span>High-volume service</span>
+            <span>User journey redesign</span>
+            <span>Service improvement</span>
+          </div>
+
+          <a href="case-study-dart.html" class="case-card-link">View Payment case study</a>
+        </div>
+      </article>
+
+      <article class="case-card">
+                        <img src="assets/work/thumbnails/Desktop - 2.png" alt="Standards and testing agency">
+
+        <div class="case-card-content">
+          <p class="case-card-org">Standards and Testing agency</p>
+          <h3 class="case-card-title">Digital Assessments</h3>
+          <p class="case-card-summary">
+            Shaping future assessment services through strategic service design, ecosystem thinking and a clearer understanding of delivery, policy and operational needs.
+          </p>
+
+          <div class="case-card-meta">
+            <span>Education transformation</span>
+            <span>Strategic design</span>
+            <span>Complex ecosystem</span>
+          </div>
+
+          <a href="case-study-sta.html" class="case-card-link">View Assessment case study</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+    <!---------Recognition Section--------->
+
+    <!---------Contact Section--------->
+
   </main>
 
   <footer>
+    <div class="container">
       <span class="footer-logo">Emma<span>.</span>Wailes</span>
       <span>Head of Design · Hippo Digital · Manchester</span>
-    <p>© Emma Wailes</p>
+      <p>&copy; 2024 Emma Wailes. All rights reserved.</p>
   </footer>
 
 </body>
+
 </html>
